@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ñawi — Catálogo Navidad 2026</title>
-<meta name="description" content="Ñawi — arte hecho a mano en La Paz. Esferas navideñas personalizadas, bandejas y posavasos de cemento. Catálogo Navidad 2026.">
+<meta name="description" content="Ñawi — arte hecho a mano en Bolivia. Esferas navideñas personalizadas, bandejas y posavasos de cemento. Catálogo Navidad 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -71,8 +71,36 @@
   .nav .links a:hover{color:var(--garnet);text-shadow:0 0 12px rgba(176,137,63,.45)}
   .nav .links a.wa{background:var(--pine);color:var(--cream);padding:9px 18px;border-radius:999px;box-shadow:0 0 0 0 rgba(47,74,60,.4);animation:pulse 2.6s ease-out infinite}
   .nav .links a.wa:hover{text-shadow:none}
+  .nav .links a.ig{background:transparent;border:1.5px solid var(--gold);color:var(--garnet);padding:8px 16px;border-radius:999px}
+  .nav .links a.ig:hover{background:var(--gold-soft);color:#fff;text-shadow:none;border-color:var(--gold-soft)}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(176,137,63,.45)}70%{box-shadow:0 0 0 12px rgba(176,137,63,0)}100%{box-shadow:0 0 0 0 rgba(176,137,63,0)}}
-  @media(max-width:760px){ .nav .links a:not(.wa){display:none} }
+  @media(max-width:760px){ .nav .links{gap:10px} .nav .links a{font-size:13px;padding:7px 13px} }
+
+  /* ACCESOS RÁPIDOS a categorías */
+  .quicknav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px auto 0;max-width:900px}
+  .quicknav a{display:flex;flex-direction:column;align-items:center;gap:7px;text-decoration:none;
+    background:rgba(255,255,255,.85);border:1px solid var(--line);border-radius:14px;padding:16px 10px;
+    color:var(--pine);font-weight:500;font-size:14px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s;backdrop-filter:blur(3px)}
+  .quicknav a:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(176,137,63,.18);border-color:var(--gold-soft)}
+  .quicknav a span{font-size:22px;line-height:1}
+  @media(max-width:620px){ .quicknav{grid-template-columns:1fr 1fr} }
+
+  /* SORTEO / Instagram */
+  .sorteo{max-width:900px;margin:30px auto 0;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+    background:linear-gradient(100deg,var(--pine),var(--pine-deep));color:var(--cream);border-radius:18px;padding:20px 26px;
+    box-shadow:0 14px 34px rgba(47,74,60,.22)}
+  .sorteo .txt{font-size:15.5px;max-width:580px}
+  .sorteo .txt b{color:var(--gold-soft)}
+  .sorteo a.btn{background:var(--gold);color:#3a2d10;padding:11px 20px;font-size:14px;white-space:nowrap}
+  .sorteo a.btn:hover{background:var(--gold-soft)}
+
+  /* MISIÓN / VISIÓN */
+  .mv{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:40px auto 0;text-align:left}
+  .mv .mv-card{background:rgba(255,255,255,.85);border:1px solid var(--line);border-radius:16px;padding:26px 24px;backdrop-filter:blur(2px);transition:transform .3s,box-shadow .3s}
+  .mv .mv-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(176,137,63,.14)}
+  .mv .mv-card .kicker{margin-bottom:8px}
+  .mv .mv-card p{color:#5f5346;font-size:15px}
+  @media(max-width:620px){ .mv{grid-template-columns:1fr} }
 
   /* HERO (más compacto) */
   .hero{background:linear-gradient(165deg,#355442,var(--pine),var(--pine-deep));background-size:160% 160%;animation:drift 16s ease-in-out infinite;color:var(--cream);text-align:center;padding:52px 24px 58px;position:relative;overflow:hidden}
@@ -317,10 +345,8 @@
     <div class="wrap">
       <div class="brand">Ñawi</div>
       <div class="links">
-        <a href="#esferas">Esferas</a>
-        <a href="#posavasos">Posavasos</a>
-        <a href="#bandejas">Bandejas</a>
-        <a class="wa" id="navWa" href="#">WhatsApp</a>
+        <a class="ig" id="navIg" href="#" target="_blank" rel="noopener">◎ Instagram</a>
+        <a class="wa" id="navWa" href="#" target="_blank" rel="noopener">✆ WhatsApp</a>
       </div>
     </div>
   </nav>
@@ -337,12 +363,23 @@
     </div>
   </header>
 
+  <div class="wrap" style="position:relative;z-index:2">
+    <nav class="quicknav" aria-label="Categorías">
+      <a href="#esferas"><span>✦</span>Esferas</a>
+      <a href="#posavasos"><span>◷</span>Posavasos</a>
+      <a href="#bandejas"><span>▭</span>Bandejas</a>
+      <a href="#sets"><span>❏</span>Bandejas y posavasos</a>
+    </nav>
+    <div class="sorteo reveal" id="sorteo"></div>
+  </div>
+
   <section class="about wrap">
     <div class="reveal">
       <span class="kicker">Sobre Ñawi</span>
       <div class="sign" id="aboutSign"></div>
       <p class="intro" id="aboutIntro"></p>
     </div>
+    <div class="mv" id="mvBlock"></div>
     <div class="valores" id="valores"></div>
   </section>
 
@@ -368,7 +405,7 @@
     </div>
   </footer>
 
-  <script src="productos.js?v=4"></script>
+  <script src="productos.js?v=5"></script>
   <script>
     const d = window.NAWI;
     const Bs = n => n==null ? null : 'Bs. '+Number(n).toLocaleString('es-BO');
@@ -381,9 +418,20 @@
     document.getElementById('claim').textContent = d.claim;
     document.getElementById('heroMeta').innerHTML = `${esc(d.contacto.instagram)} <span>·</span> ${esc(d.contacto.ciudad)}`;
     document.getElementById('navWa').href = waLink;
+    document.getElementById('navIg').href = igLink;
 
     document.getElementById('aboutSign').textContent = d.about.significado;
     document.getElementById('aboutIntro').textContent = d.about.intro;
+    if(d.about.mision || d.about.vision){
+      document.getElementById('mvBlock').innerHTML =
+        `<div class="mv-card reveal"><span class="kicker">Misión</span><p>${esc(d.about.mision)}</p></div>
+         <div class="mv-card reveal"><span class="kicker">Visión</span><p>${esc(d.about.vision)}</p></div>`;
+    }
+    if(d.sorteo){
+      document.getElementById('sorteo').innerHTML =
+        `<div class="txt"><b>🎁 Sorteo navideño:</b> ${esc(d.sorteo.texto)}</div>
+         <a class="btn" href="${igLink}" target="_blank" rel="noopener">${esc(d.sorteo.cta)}</a>`;
+    }
     document.getElementById('valores').innerHTML = d.about.valores.map((v,i)=>`
       <div class="valor reveal" style="transition-delay:${i*.09}s"><div class="dot">✦</div><h4>${esc(v.t)}</h4><p>${esc(v.d)}</p></div>`).join('');
 
@@ -433,13 +481,14 @@
                 <button class="opt" data-val="otro">Otro color</button>
                 <button class="opt" data-val="no">Sin moño</button>
               </div>
-              <small class="cfg-note" id="monoNote" style="display:none;color:var(--garnet)">Moño de otro color: desde 1 docena.</small>
+              <input class="cfg-input" id="cfgMonoColor" style="display:none;margin-top:10px" maxlength="30" placeholder="¿Qué color de moño quieres?">
+              <small class="cfg-note" id="monoNote" style="display:none;color:var(--garnet)">Moño de otro color: desde 12 unidades (1 docena).</small>
             </div>
           </div>
 
           <div class="cfg-preview">
-            <div class="cfg-group" style="margin-bottom:12px">
-              <label>5 · Tu foto (opcional)</label>
+            <div class="cfg-group" id="cfgFotoLabel" style="margin-bottom:12px">
+              <label>5 · Tu foto (solo transparente)</label>
             </div>
             <div class="cropper">
               <div class="circle roja" id="cfgCircle">
@@ -452,12 +501,12 @@
               <div class="zoom-row" id="zoomRow" style="display:none">
                 <span>Zoom</span><input type="range" id="cfgZoom" min="1" max="3" step="0.01" value="1">
               </div>
-              <div class="cfg-actions">
+              <div class="cfg-actions" id="cfgFotoActions">
                 <input type="file" id="cfgFile" accept="image/*" hidden>
                 <button class="mini" id="cfgUpload">📷 Cargar foto</button>
                 <button class="mini" id="cfgClear" style="display:none">Quitar</button>
               </div>
-              <label class="check"><input type="checkbox" id="cfgSinEspuma"> Solo la foto, sin espuma (nieve)</label>
+              <label class="check" id="cfgSinEspumaWrap"><input type="checkbox" id="cfgSinEspuma"> Solo la foto, sin espuma (nieve)</label>
             </div>
             <div class="cfg-resumen" id="cfgResumen"></div>
             <a class="btn primary cfg-cta" id="cfgCta" href="#" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
@@ -568,7 +617,7 @@
     /* ===== CONFIGURADOR ===== */
     (function initBuilder(){
       const root=document.getElementById('builder'); if(!root) return;
-      const state={tipo:'roja',texto:'',copos:{},huellita:0,foto:false,sinEspuma:false,mono:'rojo'};
+      const state={tipo:'roja',texto:'',copos:{},huellita:0,foto:false,sinEspuma:false,mono:'rojo',monoColor:''};
 
       // copos steppers
       const coposWrap=document.getElementById('cfgCopos');
@@ -592,6 +641,23 @@
         }));
       });
 
+      // foto solo en transparente; roja entera va sin foto
+      function updatePhoto(){
+        const isTransp = state.tipo==='transp';
+        ['cfgFotoLabel','cfgFotoActions','cfgSinEspumaWrap','cfgSize'].forEach(id=>{
+          const el=document.getElementById(id); if(el) el.style.display = isTransp ? '' : 'none';
+        });
+        const hint=document.getElementById('cfgHint');
+        if(isTransp){
+          hint.innerHTML='<b>Carga tu foto</b><span>Se verá dentro de la esfera (8 cm)</span>';
+        }else{
+          hint.innerHTML='<b>Esfera roja entera</b><span>Esta versión va sin foto</span>';
+          hint.style.display='flex';
+          document.getElementById('cfgSinEspuma').checked=false; state.sinEspuma=false;
+          if(state.foto) document.getElementById('cfgClear').click();
+        }
+      }
+
       // opts (tipo, mono)
       root.querySelectorAll('.opts').forEach(group=>{
         group.querySelectorAll('.opt').forEach(opt=>opt.addEventListener('click',()=>{
@@ -599,14 +665,20 @@
           opt.classList.add('active');
           const field=group.dataset.field, val=opt.dataset.val;
           state[field]=val;
-          if(field==='tipo') document.getElementById('cfgCircle').classList.toggle('roja',val==='roja');
-          if(field==='mono') document.getElementById('monoNote').style.display=(val==='otro')?'block':'none';
+          if(field==='tipo'){ document.getElementById('cfgCircle').classList.toggle('roja',val==='roja'); updatePhoto(); }
+          if(field==='mono'){
+            const otro=(val==='otro');
+            document.getElementById('monoNote').style.display=otro?'block':'none';
+            document.getElementById('cfgMonoColor').style.display=otro?'block':'none';
+            if(!otro){ state.monoColor=''; document.getElementById('cfgMonoColor').value=''; }
+          }
           render();
         }));
       });
 
-      // texto
+      // texto + color de moño
       document.getElementById('cfgTexto').addEventListener('input',e=>{state.texto=e.target.value;render();});
+      document.getElementById('cfgMonoColor').addEventListener('input',e=>{state.monoColor=e.target.value;render();});
       // sin espuma
       document.getElementById('cfgSinEspuma').addEventListener('change',e=>{state.sinEspuma=e.target.checked;render();});
 
@@ -655,7 +727,10 @@
         if(state.huellita>0) L.push(['Huellitas', state.huellita+' ('+d.configurador.huellita.size+')']);
         if(state.foto) L.push(['Foto', 'Sí, la adjunto'+(state.sinEspuma?' · solo foto, sin espuma':'')]);
         else if(state.sinEspuma) L.push(['Acabado','Solo foto, sin espuma']);
-        L.push(['Moño', state.mono==='rojo'?'Rojo':state.mono==='otro'?'Otro color (desde 1 docena)':'Sin moño']);
+        let mono='Sin moño';
+        if(state.mono==='rojo') mono='Rojo';
+        else if(state.mono==='otro') mono='Otro color'+(state.monoColor.trim()?': '+state.monoColor.trim():'')+' (desde 12 u.)';
+        L.push(['Moño', mono]);
         return L;
       }
       function render(){
@@ -667,6 +742,7 @@
         if(state.foto) msg+=' (Adjunto mi foto en el chat.)';
         cta.href=waLink+'?text='+enc(msg);
       }
+      updatePhoto();
       render();
     })();
 

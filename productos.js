@@ -1,6 +1,6 @@
 /* ============================================================
    ÑAWI — Catálogo Navidad 2026 · Datos
-   Fuente única. La usa catalogo.html.
+   Fuente única. La usa index.html.
    Producto: nombre, desc, detalles[], precio|null, precioNota, fotos[], tags[]
    Producto especial: tipo:"configurador" (la tarjeta "Crea tu propia esfera").
    Precios aprox. (nov 2026) — se ajustan después.
@@ -13,12 +13,14 @@ window.NAWI = {
   contacto: {
     instagram: "@nawi_lp",
     whatsapp: "59165628533",
-    ciudad: "La Paz, Bolivia",
+    ciudad: "Bolivia",
   },
 
   about: {
     significado: "Ñawi — “lo que entra por la vista”.",
-    intro: "Arte y detalles hechos a mano por Maya Avila, en La Paz. Cada pieza se piensa, se moldea y se personaliza una por una. Esta Navidad: una colección para regalar y para guardar.",
+    intro: "Arte y detalles hechos a mano en Bolivia. Cada pieza se piensa, se moldea y se personaliza una por una. Esta Navidad: una colección para regalar y para guardar.",
+    mision: "Convertir momentos en recuerdos: piezas hechas a mano, personalizadas una por una, para que cada regalo tenga nombre, historia y detalle.",
+    vision: "Que Ñawi sea sinónimo de lo hecho a mano en Bolivia — una marca que acompaña tus fechas más queridas con arte, calidez y un acabado impecable.",
     valores: [
       { t: "Hecho a mano", d: "Pieza por pieza, nada de producción en serie." },
       { t: "Personalizado", d: "Tu nombre, tu foto, tu mascota — tú eliges." },
@@ -26,7 +28,13 @@ window.NAWI = {
     ],
   },
 
-  entrega: "La Paz — coordinamos entrega o recojo.",
+  // Incentivo: seguir en Instagram + sorteo navideño.
+  sorteo: {
+    texto: "Sigue a @nawi_lp en Instagram y entra al sorteo de descuentos de Navidad.",
+    cta: "Seguir en Instagram",
+  },
+
+  entrega: "Envíos a toda Bolivia — coordinamos entrega o recojo.",
   notaFinal: "¿Llevas esferas + bandejas + posavasos juntos? Hacemos un precio especial por cantidad. Escríbenos y lo armamos.",
 
   categorias: [
@@ -53,16 +61,16 @@ window.NAWI = {
         },
         {
           nombre: "Esfera transparente con foto",
-          desc: "Esfera transparente de 8 cm rellena de copos de nieve, con tu foto y tu nombre en vinilo. Para ti, tu familia o tus seres queridos.",
-          detalles: ["8 cm", "Relleno de copos", "Foto + nombre", "Moño rojo"],
+          desc: "Esfera transparente de 8 cm rellena de copos de nieve, con tu foto. Súmale tu nombre en vinilo si quieres — va como extra.",
+          detalles: ["8 cm", "Relleno de copos", "Tu foto", "Nombre: extra opcional", "Moño rojo"],
           precio: 35, precioNota: "3+ Bs. 30 c/u · 6+ Bs. 25 c/u",
           fotos: ["esfera-transp-persona-1.jpg", "esfera-transp-persona-2.jpg", "esfera-transp-persona-3.jpg", "esfera-transp-persona-4.jpg"],
           tags: ["Transparente"],
         },
         {
           nombre: "Esfera transparente para tu mascota",
-          desc: "Esfera transparente de 8 cm con la foto de tu perrito o gatito, relleno de copos y su nombre en vinilo. El recuerdo más tierno del árbol.",
-          detalles: ["8 cm", "Relleno de copos", "Foto de tu mascota + nombre", "Moño rojo"],
+          desc: "Esfera transparente de 8 cm con la foto de tu perrito o gatito y relleno de copos. El nombre va como extra opcional. El recuerdo más tierno del árbol.",
+          detalles: ["8 cm", "Relleno de copos", "Foto de tu mascota", "Nombre: extra opcional", "Moño rojo"],
           precio: 35, precioNota: "3+ Bs. 30 c/u · 6+ Bs. 25 c/u",
           fotos: ["esfera-transp-mascota-1.jpg", "esfera-transp-mascota-2.jpg", "esfera-transp-mascota-3.jpg", "esfera-transp-mascota-4.jpg"],
           tags: ["Transparente"],
@@ -71,7 +79,7 @@ window.NAWI = {
           nombre: "Esfera transparente solo nombre",
           desc: "Esfera transparente de 8 cm rellena de copos, con tu nombre en vinilo blanco. Limpia y elegante, sin foto.",
           detalles: ["8 cm", "Relleno de copos", "Nombre en vinilo", "Moño rojo"],
-          precio: null, precioNota: null,
+          precio: 35, precioNota: "3+ Bs. 30 c/u · 6+ Bs. 25 c/u",
           fotos: ["esfera-transp-nombre-1.jpg", "esfera-transp-nombre-2.jpg", "esfera-transp-nombre-3.jpg"],
           tags: ["Transparente"],
         },
