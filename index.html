@@ -119,6 +119,19 @@
   .hero .meta{margin-top:18px;font-size:13.5px;letter-spacing:1px;color:#C3CFBF}
   .hero .meta span{color:var(--gold-soft)}
 
+  /* ornamentos colgando (minimalistas) */
+  .hero .ornaments{position:absolute;top:0;left:0;right:0;height:150px;z-index:2;pointer-events:none}
+  .hero .ornament{position:absolute;top:0;transform-origin:top center;animation:sway 4.6s ease-in-out infinite;display:flex;flex-direction:column;align-items:center}
+  .hero .ornament .string{width:1px;height:var(--len);background:linear-gradient(var(--gold-soft),rgba(200,168,98,.12))}
+  .hero .ornament .ball{width:var(--sz);height:var(--sz);border-radius:50%;position:relative;
+    background:radial-gradient(circle at 34% 28%, rgba(255,255,255,.75), transparent 46%), var(--c);
+    box-shadow:0 4px 10px rgba(0,0,0,.28)}
+  .hero .ornament .ball::before{content:"";position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:1px 1px 0 0;background:var(--gold-soft)}
+  @keyframes sway{0%,100%{transform:rotate(-3.5deg)}50%{transform:rotate(3.5deg)}}
+  /* silueta de pinos que funde el hero con el fondo crema */
+  .hero .treeline{position:absolute;bottom:-1px;left:0;width:100%;height:60px;z-index:2;display:block}
+  .hero .treeline path{fill:var(--cream)}
+
   /* ABOUT */
   .about{padding:64px 0 10px;text-align:center}
   .about .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(24px,4vw,34px);color:var(--pine);max-width:720px;margin:14px auto 0}
@@ -314,7 +327,7 @@
     @page{margin:12mm}
     html{scroll-behavior:auto}
     body{background:#fff}
-    .nav,.snow-field,.sparkle-field,.cursor-glow,.flow-bg{display:none}
+    .nav,.snow-field,.sparkle-field,.cursor-glow,.flow-bg,.ornaments,.treeline{display:none}
     .reveal{opacity:1!important;transform:none!important}
     .hero,.empaque,.valor,.card,.ph .fallback,.tag,.btn,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .hero{background:var(--pine)!important;padding:40px 24px;animation:none}
@@ -354,6 +367,13 @@
   <header class="hero">
     <div class="snow-field" data-flakes="16"></div>
     <div class="glow g1"></div><div class="glow g2"></div>
+    <div class="ornaments" aria-hidden="true">
+      <span class="ornament" style="left:9%;--len:44px;--sz:16px;--c:var(--gold);animation-delay:-.4s"><span class="string"></span><span class="ball"></span></span>
+      <span class="ornament" style="left:19%;--len:70px;--sz:13px;--c:var(--garnet);animation-delay:-1.6s"><span class="string"></span><span class="ball"></span></span>
+      <span class="ornament" style="left:81%;--len:56px;--sz:15px;--c:var(--terracotta);animation-delay:-1s"><span class="string"></span><span class="ball"></span></span>
+      <span class="ornament" style="left:91%;--len:38px;--sz:12px;--c:var(--gold-soft);animation-delay:-2.1s"><span class="string"></span><span class="ball"></span></span>
+    </div>
+    <svg class="treeline" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path id="treelinePath" d=""></path></svg>
     <div class="in">
       <div class="filete"></div>
       <div class="marca">Ñawi</div>
@@ -759,6 +779,15 @@
         field.appendChild(f);
       }
     });
+
+    /* Silueta de pinos (treeline) al pie del hero */
+    (function treeline(){
+      const path=document.getElementById('treelinePath'); if(!path) return;
+      const W=1200, B=80, n=20, step=W/n; let p='M0,'+B;
+      for(let i=0;i<=n;i++){ const x=i*step; const h=18+((i*7)%5)*7;
+        p+=` L${x.toFixed(0)},${B} L${(x+step/2).toFixed(0)},${(B-h).toFixed(0)}`; }
+      p+=` L${W},${B} Z`; path.setAttribute('d',p);
+    })();
 
     /* Fondo de líneas navideñas que fluye en espejo (adaptado de "Background Paths") */
     (function flowPaths(){
