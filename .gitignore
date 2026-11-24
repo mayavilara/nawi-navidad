@@ -3,3 +3,14 @@ tarjetas-instagram.html
 *.psd
 .DS_Store
 Thumbs.db
+
+# Fotos originales de los sets (pesadas) — el sitio usa fotos/web/ (generado por actualizar-fotos.py)
+fotos/posavasos/
+fotos/bandejas/
+fotos/bandejas-con-posavasos/
+fotos/LEEME-SETS.txt
+fotos/**/_PON-AQUI.txt
+
+# Documentos de marketing (no van al repo público del sitio)
+plan-marketing-instagram.*
+calendario-captions-instagram.*
