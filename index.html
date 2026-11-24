@@ -155,16 +155,16 @@
   .about .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3.6vw,30px);color:var(--pine);max-width:720px;margin:10px auto 0}
   .about .intro{max-width:640px;margin:12px auto 0;color:#5f5346;font-size:16px}
   .valores{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:860px;margin:26px auto 0}
-  .valor{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:16px;padding:28px 20px;text-align:center;transition:transform .3s,box-shadow .3s}
+  .valor{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:16px;padding:18px 16px;text-align:center;transition:transform .3s,box-shadow .3s}
   .valor:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(176,137,63,.16)}
-  .valor .dot{width:36px;height:36px;border-radius:50%;background:var(--cream-deep);border:1px solid var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:16px}
+  .valor .dot{width:32px;height:32px;border-radius:50%;background:var(--cream-deep);border:1px solid var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:15px}
   .valor h4{font-family:var(--display);font-size:19px;color:var(--pine);font-weight:600}
   .valor p{font-size:14px;color:var(--muted);margin-top:6px}
   @media(max-width:620px){ .valores{grid-template-columns:1fr;gap:14px} }
 
   /* SECCIÓN */
-  section.linea{padding:58px 0 8px}
-  .lead{max-width:720px;margin:0 auto 36px;text-align:center}
+  section.linea{padding:30px 0 6px}
+  .lead{max-width:720px;margin:0 auto 24px;text-align:center}
   .lead h2{font-family:var(--display);font-size:clamp(28px,4.6vw,42px);font-weight:600;color:var(--pine);margin-top:10px;transition:text-shadow .4s}
   .lead h2:hover{text-shadow:0 0 22px rgba(176,137,63,.45)}
   .lead .uline{width:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:12px auto 0;transition:width 1s ease .15s}
@@ -311,7 +311,7 @@
   .mini:hover{border-color:var(--gold-soft)}
 
   /* EMPAQUE (dentro de esferas) */
-  .empaque{margin-top:46px;background:linear-gradient(180deg,var(--cream-deep),#EFE3CC);border:1px solid var(--line);border-radius:22px;padding:46px 30px;text-align:center;position:relative;overflow:hidden}
+  .empaque{margin-top:30px;background:linear-gradient(180deg,var(--cream-deep),#EFE3CC);border:1px solid var(--line);border-radius:22px;padding:46px 30px;text-align:center;position:relative;overflow:hidden}
   .empaque .emp-head h3{font-family:var(--display);font-size:clamp(24px,3.6vw,32px);color:var(--pine);font-weight:600;margin-top:8px}
   .empaque .emp-head p{max-width:620px;margin:12px auto 0;color:#5f5346;font-size:16px}
   .emp-banner{position:relative;border-radius:16px;overflow:hidden;margin:28px auto 0;max-width:880px;border:1px solid var(--line);box-shadow:0 18px 44px rgba(43,38,34,.14)}
@@ -445,6 +445,54 @@
   .resena-form input:focus,.resena-form textarea:focus{outline:none;border-color:var(--gold)}
   .resena-form .btn{width:100%;justify-content:center}
   .resena-fine{display:block;margin-top:10px;color:var(--muted);font-size:11.5px;text-align:center}
+
+  /* ===== BOTÓN Y MODO NOCHE ===== */
+  .daynight{background:transparent;border:1.5px solid var(--gold-soft);color:var(--garnet);width:38px;height:38px;border-radius:999px;cursor:pointer;font-size:15px;line-height:1;display:inline-flex;align-items:center;justify-content:center;transition:transform .3s,background .2s;padding:0}
+  .daynight:hover{transform:rotate(-18deg);background:rgba(200,168,98,.12)}
+  body.night{ --cream:#15130E; --cream-deep:#211D15; --cream-2:#1C190F; --ink:#F1E9DA; --muted:#ACA18E; --line:#3A332A; --garnet:#DB7A6C; --gold:#CBA45A; --gold-soft:#DEC389;
+    background:
+      radial-gradient(60vw 48vw at 12% 4%, rgba(203,164,90,.10), transparent 60%),
+      radial-gradient(60vw 55vw at 50% 102%, rgba(47,74,60,.22), transparent 60%),
+      #15130E; }
+  body.night .card{background:linear-gradient(180deg,#221E16,#1a1710)}
+  body.night .valor,
+  body.night .mv .mv-card,
+  body.night .pedido-box,
+  body.night .resena,
+  body.night .resena-form,
+  body.night .quicknav a{background:#201c14}
+  body.night .nav,
+  body.night .nav.scrolled{background:rgba(18,16,11,.92)}
+  body.night .view-switch{background:rgba(32,28,20,.9)}
+  body.night .pedido-sel select,
+  body.night .pedido-nota input,
+  body.night .resena-form input,
+  body.night .resena-form textarea{background:#17140d;color:var(--ink)}
+  body.night .empaque{background:linear-gradient(180deg,#201c14,#17140d)}
+  body.night .emp-nota{background:rgba(255,255,255,.05)}
+  body.night .nav .brand,
+  body.night .about .sign,
+  body.night .lead h2,
+  body.night .valor h4,
+  body.night .empaque .emp-head h3,
+  body.night .cta h2,
+  body.night .resena-form .rf-head{color:#ECE1C8}
+  body.night .price,
+  body.night .quicknav a,
+  body.night .chips li,
+  body.night .pedido-total b,
+  body.night .ci-nombre,
+  body.night .ci-line,
+  body.night .resena figcaption,
+  body.night .psel-field label,
+  body.night .pedido-nota label{color:var(--gold-soft)}
+  body.night .btn.ghost{border-color:var(--gold-soft);color:var(--gold-soft)}
+  body.night .about .intro,
+  body.night .mv .mv-card p,
+  body.night .empaque .emp-head p{color:#C9BCA8}
+  body.night .ph .fallback{background:linear-gradient(160deg,#211D15,#15120c)}
+  body.night .ph .fallback span{color:var(--gold-soft)}
+  body.night .flow-bg{opacity:.45}
 </style>
 </head>
 <body>
@@ -457,6 +505,7 @@
     <div class="wrap">
       <div class="brand">Ñawi</div>
       <div class="links">
+        <button class="daynight" id="dayNight" type="button" aria-label="Modo noche">🌙</button>
         <a class="ig" id="navIg" href="#" target="_blank" rel="noopener">◎ Instagram</a>
         <a class="wa" id="navWa" href="#" target="_blank" rel="noopener">✆ WhatsApp</a>
       </div>
@@ -733,17 +782,17 @@
     d.categorias.forEach(cat=>{
       const sec=document.createElement('section');
       sec.className='linea'; sec.id=cat.id;
-      const toolbar = cat.id==='esferas' ? `<div class="view-switch">
+      const toolbar = `<div class="view-switch">
           <button class="vopt active" data-view="grid">▦ Cuadrícula</button>
           <button class="vopt" data-view="list">▤ Lista</button>
           <button class="vopt" data-view="pack">❏ Mazo</button>
-        </div>` : '';
+        </div>`;
       sec.innerHTML=`<div class="lead reveal"><span class="kicker">${esc(cat.titulo)}</span>
           <h2>${esc(cat.titulo)}</h2><div class="uline"></div>
           ${cat.subtitulo?`<p>${esc(cat.subtitulo)}</p>`:''}</div>${toolbar}
         <div class="grid">${cat.productos.map(cardHTML).join('')}</div>`;
       sec.querySelectorAll('.grid > .card').forEach((c,i)=>c.style.transitionDelay=(i*.07)+'s');
-      if(cat.id==='esferas'){
+      { // posiciones del "mazo" + switcher para TODAS las categorías
         const prod=[...sec.querySelectorAll('.grid > .card:not(.config)')];
         const mid=(prod.length-1)/2;
         prod.forEach((card,i)=>{
@@ -1055,6 +1104,21 @@
       }
       nombre.addEventListener('input',build); texto.addEventListener('input',build);
       paint(); build();
+    })();
+
+    /* ===== MODO DÍA / NOCHE ===== */
+    (function dayNight(){
+      const btn=document.getElementById('dayNight'); if(!btn) return;
+      const saved=localStorage.getItem('nawi-tema');
+      const prefiereOscuro = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let night = saved ? saved==='night' : prefiereOscuro;
+      function apply(){
+        document.body.classList.toggle('night', night);
+        btn.textContent = night ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', night ? 'Modo día' : 'Modo noche');
+      }
+      apply();
+      btn.addEventListener('click',()=>{ night=!night; localStorage.setItem('nawi-tema', night?'night':'day'); apply(); });
     })();
 
     /* Nieve en zonas oscuras */
